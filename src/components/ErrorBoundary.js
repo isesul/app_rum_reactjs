@@ -1,4 +1,6 @@
 import React from 'react';
+import apm from '../apmConfig';
+
 // Componente ErrorBoundary para capturar errores
 class ErrorBoundary extends React.Component {
     constructor(props) {

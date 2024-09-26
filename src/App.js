@@ -5,16 +5,10 @@ import HomePage from './components/HomePage';
 import CreateHortaliza from './components/CreateHortaliza';
 import HortalizasTable from './components/HortalizasTable';
 import About from './components/About';
-import { init as initApm } from '@elastic/apm-rum'
 import {  ApmRoutes, withTransaction } from '@elastic/apm-rum-react';
 import ErrorBoundary from './components/ErrorBoundary';
+import apm from './apmConfig';
 
-const apm = initApm({
-  serviceName: 'app-rum-react',
-  serverUrl: `${URL_ELASTIC_APM_RUM}`,
-  serviceVersion: '1.0.0',
-  environment: 'dev'
-})
 
 // Envolver componentes con withTransaction para un seguimiento más detallado
 const HomePageWithTransaction = withTransaction('HomePage', 'route')(HomePage);
